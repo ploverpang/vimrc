@@ -1,0 +1,108 @@
+"colorscheme ir_black
+
+set nospell
+
+nmap LB 0 nmap LE $
+
+map Q <Nop>
+
+" 设置快捷键将选中文本块复制至系统剪贴板
+vnoremap <Leader>y "+y
+" 设置快捷键将系统剪贴板内容粘贴至 vim
+nmap <Leader>p "+p
+
+" 定义快捷键关闭当前分割窗口
+nmap <Leader>q :q<CR>
+" 定义快捷键保存当前窗口内容
+nmap <Leader>w :w<CR>
+" 定义快捷键保存所有窗口内容并退出 vim
+nmap <Leader>WQ :wa<CR>:q<CR>
+" 不做任何保存，直接退出 vim
+nmap <Leader>Q :qa!<CR>
+" 依次遍历子窗口
+nnoremap nw <C-W><C-W>
+" 跳转至右方的窗口
+nnoremap <Leader>l <C-W>l
+" 跳转至左方的窗口
+nnoremap <Leader>h <C-W>h
+" 跳转至上方的子窗口
+nnoremap <Leader>k <C-W>k
+" 跳转至下方的子窗口
+nnoremap <Leader>j <C-W>j
+
+
+" *.cpp 和 *.h 间切换
+nmap <silent> <Leader>sw :FSHere<CR>
+
+" YCM
+nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
+" 只能是 #include 或已打开的文件
+nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+" 补全功能在注释中同样有效
+let g:ycm_complete_in_comments=1
+" 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
+let g:ycm_confirm_extra_conf=0
+" 禁止缓存匹配项，每次都重新生成匹配项
+let g:ycm_cache_omnifunc=0
+" 语法关键字补全			
+let g:ycm_seed_identifiers_with_syntax=1
+
+" 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。快捷键速记法：search in project
+nnoremap <Leader>sp :CtrlSF<CR>
+
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
+
+" EasyMotion
+map f <Plug>(easymotion-f)
+map F <Plug>(easymotion-F)
+
+" DoxyGen
+map <F2>a :DoxAuthor<CR>
+map <F2>f :Dox<CR>
+map <F2>b :DoxBlock<CR>
+map <F2>l :DoxLic<CR>
+map <F2>u :DoxUndoc<CR>
+
+let g:DoxygenToolkit_briefTag_funcName = "yes"
+
+"for C++ style, change the '@' to '\'
+let g:DoxygenToolkit_commentType = "C++"
+let g:DoxygenToolkit_briefTag_pre = "\\brief "
+let g:DoxygenToolkit_templateParamTag_pre = "\\tparam "
+let g:DoxygenToolkit_paramTag_pre = "\\param "
+let g:DoxygenToolkit_returnTag = "\\return "
+let g:DoxygenToolkit_throwTag_pre = "\\throw " " @exception is also valid
+let g:DoxygenToolkit_fileTag = "\\file "
+let g:DoxygenToolkit_dateTag = "\\date "
+let g:DoxygenToolkit_authorTag = "\\author "
+let g:DoxygenToolkit_versionTag = "\\version "
+let g:DoxygenToolkit_blockTag = "\\name "
+let g:DoxygenToolkit_classTag = "\\class "
+let g:DoxygenToolkit_authorName = "PangBo, bo.pang@metoak.com"
+let g:Doxygen_enhanced_color = 1
+"let g:load_doxygen_syntax = 1
+"
+set hidden
+
+" buffer快速导航
+nnoremap <Leader>a :bp<CR>
+nnoremap <Leader>d :bn<CR>
+
+" 查看buffers
+nnoremap <Leader>s :ls<CR>
+
+" 通过索引快速跳转
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
+
+let g:snips_author = 'PangBo <bo.pang@metoak.com> <ploverpang@gmail.com>'
+let g:vim_markdown_frontmatter=1
