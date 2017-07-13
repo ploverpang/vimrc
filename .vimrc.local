@@ -5,6 +5,7 @@ set nospell
 nmap LB 0 nmap LE $
 
 map Q <Nop>
+map <s-j> <Nop>
 
 " 设置快捷键将选中文本块复制至系统剪贴板
 vnoremap <Leader>y "+y
@@ -106,3 +107,9 @@ nnoremap <Leader>0 :10b<CR>
 
 let g:snips_author = 'PangBo <bo.pang@metoak.com> <ploverpang@gmail.com>'
 let g:vim_markdown_frontmatter=1
+
+" resize split window size
+nmap w= :resize +3<CR>
+nmap w- :resize -3<CR>
+nmap w, :vertical resize -3<CR>
+nmap w. :vertical resize +3<CR>
